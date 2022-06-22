@@ -1,0 +1,10 @@
+
+.dtails-card-class
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+    width:100%
+}
+ 

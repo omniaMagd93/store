@@ -1,0 +1,91 @@
+.parent-class
+{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+}
+.parent-class >div
+{
+    width: 49%;
+}
+
+
+  .product-card {
+    max-width: 30%;
+    margin-top: 15px;
+    margin-left: 300px;
+  }
+  
+  .product-content
+  {
+    text-align: center;
+  }
+
+  .list-grid
+  {
+    padding-left: 200px;
+  }
+
+  .form-class
+  {
+    height: 100px;
+    margin-top: 20%;
+  }
+
+  .form-class input
+  {
+    width: 50%;
+    border :0;
+    Background:#ddd;  
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .cart-items-class
+  {
+    padding-left:10px ;
+  }
+  
+  .form-class button:disabled
+  {
+    background-color: rgba(239, 239, 239, 0.3) !important;
+    color: rgba(16, 16, 16, 0.5) !important;
+    border-color: rgba(118, 118, 118, 0.3) !important;
+  }
+
+  .form-class button
+  {
+    width: 30%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #002bff;
+    color: black;
+    font-size: 20px;
+    margin-left: 85px;
+    cursor: pointer;
+  }
+  
+
+  .form-class label
+  {
+    color :#333333e6;
+    margin-bottom:10px;
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  .empty-cart
+{
+   text-align: center;
+   padding-top: 300px; 
+}
+
+
+.empty-cart h1
+{
+    color: #002bff;
+    font-weight: bold;
+    font-size: 67px;
+    font-family: 'Times New Roman', Times, serif;
+}

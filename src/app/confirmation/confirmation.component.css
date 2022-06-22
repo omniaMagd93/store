@@ -1,0 +1,21 @@
+.success-div
+{
+   text-align: center;
+   padding-top: 300px; 
+}
+
+
+.success-div h1
+{
+    color:green;
+    font-weight:500;
+    font-size: 40px;
+}
+
+.success-div p
+{
+    color:rgb(2, 1, 1);
+    font-weight: 200;
+    font-size: 30px;
+    padding-top: 20px;
+}

@@ -1,0 +1,23 @@
+
+
+h1
+{
+  text-align: center;
+}
+
+.toolbar-menu span{
+  display: flex;
+  margin: auto;
+}
+
+.toolbar-menu span a
+{
+  color: rgb(255, 255, 255) !important;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+
+
+

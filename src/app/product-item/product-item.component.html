@@ -1,0 +1,35 @@
+<mat-card [class]="cardClass" >
+
+  <div >
+    <a [routerLink]="['/productDetails',product.id]"><img mat-card-image src="{{product.url}}" alt="Photo of a Shiba Inu"></a>
+  </div>
+
+  <div>
+
+    <mat-card-content [class]="cardContentClass">
+      <a [routerLink]="['/productDetails',product.id]"><h2>{{product.name}}</h2></a>
+      <p>{{product.description}}</p>
+      <p>{{product.price}}</p>     
+      <mat-grid-list cols="3" >
+        <mat-grid-tile>
+          <button mat-fab color="warn" (click)="decreaseQuantity(product)"><h1>-</h1></button>
+      </mat-grid-tile>
+          <mat-grid-tile>
+              <p>{{product.quantity}}</p>
+          </mat-grid-tile>
+          <mat-grid-tile>           
+            <button mat-fab color="warn"  (click)="increaseQuantity(product)"><h1>+</h1></button>
+       </mat-grid-tile>
+        </mat-grid-list>
+        <mat-card-actions>
+          <button mat-flat-button color="warn" (click)="addToCart(product)">Add To Cart</button>
+        </mat-card-actions>
+        <mat-card-actions>
+          <a class="list-products-link" mat-flat-button routerLink="/" color="primary">Back To Products</a>
+        </mat-card-actions>
+
+    </mat-card-content>
+
+  </div>
+     
+  </mat-card>

@@ -1,0 +1,7 @@
+<div class="success-div" *ngIf="order">
+    <h1>Success</h1> 
+    <p>Thank you, {{order.userName}}</p>
+    <p>your {{order.totalPrice}}$ Order is Confirmaed</p>
+    <a class="list-products-link" mat-flat-button routerLink="/" color="primary">Back To Products</a>
+</div>
+

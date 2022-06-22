@@ -1,0 +1,10 @@
+
+ 
+<mat-grid-list cols="2">
+
+    <mat-grid-tile class="product-grid" *ngFor="let product of products">
+      <app-product-item [product]="product"></app-product-item>
+    </mat-grid-tile>
+   
+    
+  </mat-grid-list> 
