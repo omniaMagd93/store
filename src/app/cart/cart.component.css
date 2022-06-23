@@ -89,3 +89,8 @@
     font-size: 67px;
     font-family: 'Times New Roman', Times, serif;
 }
+
+.form-error
+{
+  color:red;
+}

@@ -25,18 +25,46 @@
 
                         <form #form="ngForm" (ngSubmit)="onSubmit()">
                             <label>full Name</label><br>
-                            <input type="text" name="userName" [(ngModel)]="userName" required minlength="3" placeholder="minimum 3 characters" ><br>
-                        
+                            <input type="text" name="userName" [(ngModel)]="userName" #userNamefield="ngModel" required minlength="3" placeholder="minimum 3 characters" ><br>
+                            <div class="form-error" *ngIf="userNamefield.invalid && userNamefield.dirty">
+                               
+                                <div  *ngIf="userNamefield.errors.required">
+                                  your username is required
+                                </div>
+                                <div *ngIf="userNamefield.errors.minlength">
+                                  your user name must contain at least 3 characters.
+                                </div>
+                              </div>
                           
                             <label>Address</label><br>
-                            <input type="text" name="address" [(ngModel)]="address" required minlength="6" placeholder="minimum 6 characters"><br>
-    
+                            <input type="text" name="address" [(ngModel)]="address" #addressfield="ngModel" required minlength="6" placeholder="minimum 6 characters"><br>
+                            
+                            <div class="form-error" *ngIf="addressfield.invalid && addressfield.dirty">
+                                <div  *ngIf="addressfield.errors.required">
+                                    your address is required
+                                </div>
+                                <div *ngIf="addressfield.errors.minlength">
+                                    Your address must contain at least 6 characters.
+                                </div>
+                            </div>
+
                             <label>Credit Card Number</label><br>
-                            <input type="text" name="creditCard" [(ngModel)]="creditCard" required minlength="16" placeholder="minimum 16 digit"><br>
+                            <input type="text" name="creditCard" [(ngModel)]="creditCard" #creditCardfield="ngModel" required minlength="16" placeholder="minimum 16 digit"><br>
                           
+                            <div class="form-error" *ngIf="creditCardfield.invalid && creditCardfield.dirty">
+                                <div  *ngIf="creditCardfield.errors.required">
+                                    your Cresit card is required
+                                </div>
+                                <div *ngIf="creditCardfield.errors.minlength">
+                                    Your credit card must contain at least 16 characters.
+                                </div>
+                            </div>
+
                             <button [disabled]="form.invalid" type="submit">Submit</button>
 
                     </form>
+
+                    
                     
             </div>
            
