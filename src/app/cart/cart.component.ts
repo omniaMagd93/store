@@ -21,6 +21,10 @@ export class CartComponent implements OnInit {
   items: Array<product> = []
   orderObj: order
   productObj: product;
+  userNameError: string;
+  addressError: string;
+  creditCardError: string;
+
 
   ngOnInit(): void {
     this.getCartProducts();
@@ -83,5 +87,45 @@ export class CartComponent implements OnInit {
     
   }
 
+  userNameChange(userNamefield)
+  {
+   
+    if(userNamefield.length < 3)
+    {
+      this.userNameError = "your user name must contain at least 3 characters."
+    }
+    else
+    {
+      this.userNameError =""
+    }
+
+  }
+
+  addressChange(addressField)
+  {
+   
+    if(addressField.length < 6)
+    {
+      this.addressError = "your address must contain at least 6 characters."
+    }
+    else
+    {
+      this.addressError =""
+    }
+
+  }
+
+  creditCardChange(creditCardField)
+  {
+    if(creditCardField.length != 16)
+    {
+      this.creditCardError = "your credit card must 16 characters."
+    }
+    else
+    {
+      this.creditCardError =""
+    }
+
+  }
 
 }
