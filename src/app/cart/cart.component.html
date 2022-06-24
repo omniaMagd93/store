@@ -4,13 +4,26 @@
             <div class="column container" *ngFor="let item of items">
                 <mat-grid-list cols="1" class="list-grid">
                     <mat-card class="product-card" >
+                        <button mat-fab color="warn" (click)="removeProductFromCart(item)" aria-label="Example icon button with a delete icon">
+                            <mat-icon>X</mat-icon>
+                          </button>
                         <img mat-card-image src="{{item.url}}" alt="Photo of a Shiba Inu">
                     
                         <mat-card-content class="product-content">
                           <h2>{{item.name}}</h2>
                           <p>{{item.description}}</p>
                           <p>{{item.price}}</p>     
-                          <p>{{item.quantity}}</p>
+                          <mat-grid-list cols="3" >
+                          <mat-grid-tile>
+                            <button mat-fab color="warn" (click)="decreaseQuantity(item)"><h1>-</h1></button>
+                        </mat-grid-tile>
+                            <mat-grid-tile>
+                                <p>{{item.quantity}}</p>
+                            </mat-grid-tile>
+                            <mat-grid-tile>           
+                              <button mat-fab color="warn"  (click)="increaseQuantity(item)"><h1>+</h1></button>
+                         </mat-grid-tile>
+                          </mat-grid-list>
                             
                         </mat-card-content>       
                       </mat-card>
@@ -21,7 +34,7 @@
            
     
             <div class="form-class">
-                <h1>total price: {{totalPrice}}</h1>
+                <h1>total price: {{totalPrice| number : '.2-2'}}</h1>
 
                         <form #form="ngForm" (ngSubmit)="onSubmit()">
                             <label>full Name</label><br>

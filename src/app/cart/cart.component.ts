@@ -20,6 +20,7 @@ export class CartComponent implements OnInit {
   itemsCounter: number= 0
   items: Array<product> = []
   orderObj: order
+  productObj: product;
 
   ngOnInit(): void {
     this.getCartProducts();
@@ -48,6 +49,38 @@ export class CartComponent implements OnInit {
 
     this.router.navigate(['/confirmation']);
 
+  }
+
+  removeProductFromCart(productObj)
+  {
+    localStorage.removeItem(productObj.id);
+    location.reload();
+  }
+
+  increaseQuantity(productObj)
+  {
+    productObj.quantity++;
+
+    let localStorageJsonData = JSON.parse(localStorage.getItem(productObj.id));
+    localStorageJsonData.quantity = productObj.quantity;
+    localStorage.setItem(productObj.id, JSON.stringify(localStorageJsonData));
+    location.reload();
+    
+  }
+
+  decreaseQuantity(productObj)
+  {
+    if(productObj.quantity < 1)
+    {
+      productObj.quantity--;
+
+      let localStorageJsonData = JSON.parse(localStorage.getItem(productObj.id));
+      localStorageJsonData.quantity = productObj.quantity;
+      localStorage.setItem(productObj.id, JSON.stringify(localStorageJsonData));
+      location.reload();
+    }
+      
+    
   }
 
 
