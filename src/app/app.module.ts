@@ -17,6 +17,8 @@ import {MatInputModule} from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { ConfirmationComponent } from './confirmation/confirmation.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { NotificationMessagesComponent } from './notification-messages/notification-messages.component';
 
 
 
@@ -28,7 +30,8 @@ import {MatButtonModule} from '@angular/material/button';
     HeaderComponent,
     ProductItemComponent,
     CartComponent,
-    ConfirmationComponent
+    ConfirmationComponent,
+    NotificationMessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

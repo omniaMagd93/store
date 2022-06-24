@@ -1,5 +1,8 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { NotificationMessagesComponent } from '../notification-messages/notification-messages.component';
+
 @Component({
   selector: 'app-product-item',
   templateUrl: './product-item.component.html',
@@ -8,13 +11,14 @@ import { Router } from '@angular/router';
 export class ProductItemComponent implements OnInit {
 
   @Input() product;
+  durationInSeconds = 5;
 
   cardClass: string; 
   cardContentClass: string;
   currentURL: string;
 
 
-  constructor(public router: Router) { }
+  constructor(public router: Router,private _snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.currentURL = this.router.url;
@@ -45,6 +49,9 @@ export class ProductItemComponent implements OnInit {
 
   addToCart(product)
   {
+    this._snackBar.openFromComponent(NotificationMessagesComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
     localStorage.setItem(product.id,JSON.stringify(product));
   }
 
